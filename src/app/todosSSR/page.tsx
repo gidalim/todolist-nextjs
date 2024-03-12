@@ -7,9 +7,7 @@ import Link from "next/link";
 import React from "react";
 
 const todosSSR = async () => {
-  const response = await fetch("http://localhost:3000/api/todos", {
-    cache: "no-cache",
-  });
+  const response = await fetch("http://localhost:3000/api/todos");
 
   const { todos } = await response.json();
 

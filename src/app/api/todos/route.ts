@@ -1,7 +1,9 @@
 // todos route
 
 export async function GET(request: Request) {
-  const response = await fetch("http://localhost:4000/todos");
+  const response = await fetch("http://localhost:4000/todos", {
+    cache: "no-cache",
+  });
   const todos = await response.json();
 
   if (!todos) {

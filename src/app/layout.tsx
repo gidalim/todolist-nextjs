@@ -23,8 +23,8 @@ export default function RootLayout({
           <nav>
             <Link href={"/about"}>about</Link>
             <Link href={"/report"}>report</Link>
-            <Link href={"/todos-csr"}>todos-csr</Link>
-            <Link href={"/todos-ssr"}>todos-ssr</Link>
+            <Link href={"/todosCSR"}>todosCSR</Link>
+            <Link href={"/todosSSR"}>todosSSR</Link>
           </nav>
           {children}
         </QueryProvider>
