@@ -1,7 +1,7 @@
 {
   "companyInfo": {
     "name": "주식회사 팀스파르타",
-    "desctiption": "우리회사에 대한 설명입니다. blablabla~~~~~~",
+    "description": "우리회사에 대한 설명입니다. blablabla~~~~~~",
     "image": "http://~~~~"
   },
   "todos": [
@@ -9,6 +9,18 @@
       "id": "1",
       "title": "커피 마시기",
       "contents": "아메리카노 마시기",
+      "isDone": true
+    },
+    {
+      "id": "2",
+      "title": "Next JS 공부하기 ",
+      "contents": "또두리스트 만들기",
+      "isDone": false
+    },
+    {
+      "id": "3",
+      "title": "TypeScript 공부하기",
+      "contents": "이번엔 좀 잘 해보자",
       "isDone": false
     }
   ]
