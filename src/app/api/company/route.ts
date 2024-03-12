@@ -1,5 +1,3 @@
-//company route
-
 export async function GET(request: Request) {
   const response = await fetch("http://localhost:4000/companyInfo", {
     cache: "force-cache",
@@ -14,7 +12,3 @@ export async function GET(request: Request) {
 
   return Response.json({ company });
 }
-
-// export async function POST(request: Request) {
-//   const response;
-// }

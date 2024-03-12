@@ -1,13 +1,12 @@
-// SSR 렌더링 방식
-// CUD 안 함
-// Link태그를 통한 report페이지 이동 '할 일 정보 통계 보러가기' 페이지
-
 import { Todos } from "@/types/type";
 import Link from "next/link";
 import React from "react";
+export const dynamic = "force-dynamic";
 
-const todosSSR = async () => {
-  const response = await fetch("http://localhost:3000/api/todos");
+const TodosSSR = async () => {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}api/todos`, {
+    cache: "no-cache",
+  });
 
   const { todos } = await response.json();
 
@@ -29,4 +28,4 @@ const todosSSR = async () => {
   );
 };
 
-export default todosSSR;
+export default TodosSSR;
