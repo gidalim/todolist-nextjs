@@ -3,10 +3,9 @@ import React from "react";
 // export const dynamic = "force-static";
 
 const about = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_HOST_URL}api/company`
-  );
-  const { company } = await response.json();
+  const response = await fetch(`http://localhost:4000/companyInfo`);
+  const company = await response.json();
+  console.log(company);
 
   return (
     <div>

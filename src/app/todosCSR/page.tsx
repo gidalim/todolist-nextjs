@@ -2,11 +2,16 @@
 
 import { useQueryTodo } from "@/hooks/useTodoQuerys";
 import { Todos } from "@/types/type";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const TodosCSR = () => {
+  const router = useRouter();
   const { data, isLoading, isError } = useQueryTodo();
-  console.log(data);
+
+  const handleButtonClick = () => {
+    router.push("/report");
+  };
 
   if (isLoading) {
     return <div>무야호</div>;
@@ -18,6 +23,7 @@ const TodosCSR = () => {
 
   return (
     <div>
+      <button onClick={handleButtonClick}>1234</button>
       {data.map((todos: Todos) => {
         return (
           <div key={todos.id}>

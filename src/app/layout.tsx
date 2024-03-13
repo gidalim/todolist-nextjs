@@ -20,11 +20,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <QueryProvider>
-          <nav>
-            <Link href={"/about"}>about</Link>
-            <Link href={"/report"}>report</Link>
-            <Link href={"/todosCSR"}>todosCSR</Link>
-            <Link href={"/todosSSR"}>todosSSR</Link>
+          <nav className="bg-gray-800 p-3 flex justify-start">
+            <Link className="text-gray-300 p-3" href={"/about"}>
+              about
+            </Link>
+            <Link className="text-gray-300 p-3" href={"/report"}>
+              report
+            </Link>
+            <Link className="text-gray-300 p-3" href={"/todosCSR"}>
+              todosCSR
+            </Link>
+            <Link className="text-gray-300 p-3" href={"/todosSSR"}>
+              todosSSR
+            </Link>
           </nav>
           {children}
         </QueryProvider>
