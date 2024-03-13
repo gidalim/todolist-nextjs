@@ -1,4 +1,4 @@
-import { Todos } from "@/types/type";
+import { Todo } from "@/types/type";
 import Link from "next/link";
 import React from "react";
 export const dynamic = "force-dynamic";
@@ -10,7 +10,7 @@ const TodosSSR = async () => {
       cache: "no-cache",
     }
   );
-  const { todos }: { todos: Todos[] } = await response.json();
+  const { todos }: { todos: Todo[] } = await response.json();
 
   const mustTodo = todos.filter((todos) => !todos.isDone);
   const doneTodo = todos.filter((todos) => todos.isDone);

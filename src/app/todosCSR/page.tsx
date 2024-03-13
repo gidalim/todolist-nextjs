@@ -9,12 +9,12 @@ import React from "react";
 
 const TodosCSR = () => {
   const router = useRouter();
-  const { data, isLoading, isError } = useTodoQuery();
+  const { data = [], isLoading, isError } = useTodoQuery();
   const { updateTodo } = useUpdateTodo();
   const { deleteTodo } = useDeleteTodo();
 
-  const mustTodo = data.todos.filter((todos) => !todos.isDone);
-  const doneTodo = data.todos.filter((todos) => todos.isDone);
+  const mustTodo = data.filter((todos) => !todos.isDone);
+  const doneTodo = data.filter((todos) => todos.isDone);
 
   const handleButtonClick = () => {
     router.push("/report");

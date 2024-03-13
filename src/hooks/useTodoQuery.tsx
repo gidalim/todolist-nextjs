@@ -1,18 +1,18 @@
 "use client";
 
-import { Todos } from "@/types/type";
+import { Todo } from "@/types/type";
 import { useQuery } from "@tanstack/react-query";
 
 export const useTodoQuery = () => {
-  const { data, isLoading, isError } = useQuery<{ todos: Todos[] }>({
+  return useQuery<Todo[]>({
     queryKey: ["todos"],
     queryFn: async () => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_HOST_URL}api/todos`
       );
-      return await response.json();
+      const { todos }: { todos: Todo[] } = await response.json();
+
+      return todos;
     },
-    initialData: { todos: [] },
   });
-  return { data, isLoading, isError };
 };

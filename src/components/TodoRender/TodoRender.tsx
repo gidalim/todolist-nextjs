@@ -1,10 +1,10 @@
 "use client";
 
-import { Todos } from "@/types/type";
+import { Todo } from "@/types/type";
 import React from "react";
 
 type TodoItems = {
-  data: Todos;
+  data: Todo;
   handleDeleteButtonClick: (id: string) => void;
   handleUpdateButtonClick: (id: string, isDone: boolean) => void;
 };

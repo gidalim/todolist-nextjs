@@ -13,7 +13,7 @@ export async function PATCH(
   });
   const todo = await response.json();
 
-  return Response.json(`갱신 완료`);
+  return Response.json(`갱신 완료 : ${todo.id}`);
 }
 
 export async function DELETE(
@@ -25,5 +25,5 @@ export async function DELETE(
   });
   const todo = await response.json();
 
-  return Response.json(`삭제 완료`);
+  return Response.json(`삭제 완료 : ${todo.id}`);
 }

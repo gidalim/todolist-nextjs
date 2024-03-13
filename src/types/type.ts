@@ -1,4 +1,4 @@
-export type Todos = {
+export type Todo = {
   id: string;
   title: string;
   contents: string;
