@@ -1,5 +1,6 @@
 "use client";
 
+import TodoForm from "@/components/TodoForm/TodoForm";
 import { TodoRender } from "@/components/TodoRender/TodoRender";
 import { useDeleteTodo, useUpdateTodo } from "@/hooks/useTodoMutation";
 import { useTodoQuery } from "@/hooks/useTodoQuery";
@@ -47,6 +48,7 @@ const TodosCSR = () => {
   return (
     <div>
       <button onClick={handleButtonClick}>할 일 통계 보러가기</button>
+      <TodoForm />
       <section>
         <h2>해야 할 일</h2>
         {mustTodo.map((data) => {

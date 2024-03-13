@@ -25,7 +25,7 @@ const TodosSSR = async () => {
             <div key={data.id}>
               <h3>{data.title}</h3>
               <p>{data.contents}</p>
-              {data.isDone ? <p>Done</p> : <p>Not Done</p>}
+              {data.isDone ? "Not Done" : "Done"}
             </div>
           );
         })}
@@ -37,7 +37,7 @@ const TodosSSR = async () => {
             <div key={data.id}>
               <h3>{data.title}</h3>
               <p>{data.contents}</p>
-              {data.isDone ? <p>Done</p> : <p>Not Done</p>}
+              {data.isDone ? "Not Done" : "Done"}
             </div>
           );
         })}
