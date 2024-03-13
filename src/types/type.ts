@@ -10,3 +10,14 @@ export type CompanyInfo = {
   description: string;
   image: string;
 };
+
+export type NewTodo = {
+  title: string;
+  contents: string;
+  isDone: boolean;
+};
+
+export type UpdateTodo = {
+  id: string;
+  isDone: boolean;
+};

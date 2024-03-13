@@ -10,23 +10,38 @@ const TodosSSR = async () => {
       cache: "no-cache",
     }
   );
+  const { todos }: { todos: Todos[] } = await response.json();
 
-  const { todos } = await response.json();
+  const mustTodo = todos.filter((todos) => !todos.isDone);
+  const doneTodo = todos.filter((todos) => todos.isDone);
 
   return (
     <>
       <Link href={"/report"}>할 일 통계 보러가기</Link>
-      <div>
-        {todos.map((data: Todos) => {
+      <section>
+        <h2>해야 할 일</h2>
+        {mustTodo.map((data) => {
           return (
             <div key={data.id}>
-              <h2>{data.title}</h2>
+              <h3>{data.title}</h3>
               <p>{data.contents}</p>
               {data.isDone ? <p>Done</p> : <p>Not Done</p>}
             </div>
           );
         })}
-      </div>
+      </section>
+      <section>
+        <h2>완료한 일</h2>
+        {doneTodo.map((data) => {
+          return (
+            <div key={data.id}>
+              <h3>{data.title}</h3>
+              <p>{data.contents}</p>
+              {data.isDone ? <p>Done</p> : <p>Not Done</p>}
+            </div>
+          );
+        })}
+      </section>
     </>
   );
 };

@@ -1,16 +1,39 @@
 "use client";
 
-import { useQueryTodo } from "@/hooks/useTodoQuerys";
-import { Todos } from "@/types/type";
+import { TodoRender } from "@/components/TodoRender/TodoRender";
+import { useDeleteTodo, useUpdateTodo } from "@/hooks/useTodoMutation";
+import { useTodoQuery } from "@/hooks/useTodoQuery";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const TodosCSR = () => {
   const router = useRouter();
-  const { data, isLoading, isError } = useQueryTodo();
+  const { data, isLoading, isError } = useTodoQuery();
+  const { updateTodo } = useUpdateTodo();
+  const { deleteTodo } = useDeleteTodo();
+
+  const mustTodo = data.todos.filter((todos) => !todos.isDone);
+  const doneTodo = data.todos.filter((todos) => todos.isDone);
 
   const handleButtonClick = () => {
     router.push("/report");
+  };
+
+  const handleUpdateButtonClick = (id: string, isDone: boolean) => {
+    if (!window.confirm("수정하시겠어요?")) {
+      return;
+    }
+    updateTodo({
+      id,
+      isDone: !isDone,
+    });
+  };
+
+  const handleDeleteButtonClick = (id: string) => {
+    if (!window.confirm("삭제하시겠어요?")) {
+      return;
+    }
+    deleteTodo(id);
   };
 
   if (isLoading) {
@@ -23,16 +46,33 @@ const TodosCSR = () => {
 
   return (
     <div>
-      <button onClick={handleButtonClick}>1234</button>
-      {data.map((todos: Todos) => {
-        return (
-          <div key={todos.id}>
-            <h2>{todos.title}</h2>
-            <p>{todos.contents}</p>
-            {data.isDone ? <p>Done</p> : <p>Not Done</p>}
-          </div>
-        );
-      })}
+      <button onClick={handleButtonClick}>할 일 통계 보러가기</button>
+      <section>
+        <h2>해야 할 일</h2>
+        {mustTodo.map((data) => {
+          return (
+            <TodoRender
+              key={data.id}
+              data={data}
+              handleDeleteButtonClick={handleDeleteButtonClick}
+              handleUpdateButtonClick={handleUpdateButtonClick}
+            />
+          );
+        })}
+      </section>
+      <section>
+        <h2>완료한 일</h2>
+        {doneTodo.map((data) => {
+          return (
+            <TodoRender
+              key={data.id}
+              data={data}
+              handleDeleteButtonClick={handleDeleteButtonClick}
+              handleUpdateButtonClick={handleUpdateButtonClick}
+            />
+          );
+        })}
+      </section>
     </div>
   );
 };
