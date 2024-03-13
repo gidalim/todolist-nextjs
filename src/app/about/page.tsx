@@ -11,12 +11,7 @@ const about = async () => {
       <div>{company.name}</div>
       <p>{company.description}</p>
       <figure>
-        <Image
-          src={company.image}
-          width={500}
-          height={500}
-          alt={`회사이미지`}
-        />
+        <img src={company.image} width="500" height="500" alt={`회사이미지`} />
       </figure>
     </div>
   );
