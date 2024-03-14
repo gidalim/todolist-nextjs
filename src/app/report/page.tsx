@@ -14,11 +14,17 @@ const report = async () => {
   const DoneTodoCounts = totalTodoCounts - mustTodoCounts;
 
   return (
-    <div>
-      <div>
-        <ul>현재 존재하는 TodoList의 숫자는 {totalTodoCounts}</ul>
-        <ul>현재 존재하는 해야 할 일의 숫자는 {mustTodoCounts} </ul>
-        <ul>현재 존재하는 완료 한 일의 숫자는 {DoneTodoCounts} </ul>
+    <div className="flex flex-col justify-center items-center">
+      <div className="bg-white rounded-xl shadow-lg absolute top-1/4 flex flex-col items-center justify-center gap-12 size-1/4 min-w-96">
+        <ul className="text-2xl font-medium text-black">
+          TodoList의 숫자 {totalTodoCounts}
+        </ul>
+        <ul className="text-2xl font-medium text-black">
+          해야 할 일의 숫자 {mustTodoCounts}
+        </ul>
+        <ul className="text-2xl font-medium text-black">
+          완료 한 일의 숫자 {DoneTodoCounts}
+        </ul>
       </div>
     </div>
   );

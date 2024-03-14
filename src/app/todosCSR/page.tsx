@@ -38,11 +38,11 @@ const TodosCSR = () => {
   };
 
   if (isLoading) {
-    return <div>무야호</div>;
+    return <div>현재 페이지를 불러오는 중입니다.</div>;
   }
 
   if (isError) {
-    return <>넌 나가라</>;
+    return <div>오류가 발생했어요.</div>;
   }
 
   return (

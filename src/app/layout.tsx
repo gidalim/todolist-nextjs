@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-slate-50`}>
         <QueryProvider>
-          <nav className="bg-gray-800 p-3 flex justify-start">
+          <nav className="bg-gray-800 p-3 flex justify-start sticky top-0 z-40">
             <Link className="text-gray-300 p-3" href={"/"}>
               home
             </Link>
