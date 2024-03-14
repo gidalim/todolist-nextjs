@@ -2,15 +2,12 @@ import { Todo } from "@/types/type";
 import React from "react";
 
 const report = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_HOST_URL}/api/todos`,
-    {
-      next: {
-        revalidate: 10,
-      },
-    }
-  );
-  const { todos }: { todos: Todo[] } = await response.json();
+  const response = await fetch(`http://localhost:4000/todos`, {
+    next: {
+      revalidate: 10,
+    },
+  });
+  const todos: Todo[] = await response.json();
 
   const totalTodoCounts = todos.length;
   const mustTodoCounts = todos.filter((todo) => todo.isDone === false).length;

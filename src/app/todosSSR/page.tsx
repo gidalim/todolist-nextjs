@@ -4,13 +4,10 @@ import React from "react";
 export const dynamic = "force-dynamic";
 
 const TodosSSR = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_HOST_URL}/api/todos`,
-    {
-      cache: "no-cache",
-    }
-  );
-  const { todos }: { todos: Todo[] } = await response.json();
+  const response = await fetch(`http://localhost:4000/todos`, {
+    cache: "no-cache",
+  });
+  const todos: Todo[] = await response.json();
 
   const mustTodo = todos.filter((todos) => !todos.isDone);
   const doneTodo = todos.filter((todos) => todos.isDone);
