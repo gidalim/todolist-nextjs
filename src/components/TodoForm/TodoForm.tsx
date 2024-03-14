@@ -34,15 +34,17 @@ const TodoForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleCreateTodos}>
+    <div className="flex flex-col items-center">
+      <form className="flex gap-4 p-4" onSubmit={handleCreateTodos}>
         <input
+          className="px-4 py-2 rounded-md bg-zinc-200"
           value={title}
           placeholder="입력해주세요"
           onChange={handleChangeTitle}
           required
         />
         <input
+          className="px-4 py-2 rounded-md bg-zinc-200"
           value={contents}
           placeholder="입력해주세요"
           onChange={handleChangeContent}

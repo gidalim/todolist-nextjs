@@ -46,11 +46,13 @@ const TodosCSR = () => {
   }
 
   return (
-    <div className="md:container md:mx-auto">
-      <button onClick={handleButtonClick}>할 일 통계 보러가기</button>
+    <div className="md:container md:mx-auto flex flex-col gap-8">
+      <button className="mt-8 text-xl font-bold" onClick={handleButtonClick}>
+        할 일 통계 보러가기
+      </button>
       <TodoForm />
-      <h2 className="text-2xl p-2">해야 할 일</h2>
-      <section className="position: relative flex gap-4">
+      <h2 className="text-2xl mt-8 p-4">해야 할 일</h2>
+      <section className="position: relative flex flex-wrap gap-4">
         {mustTodo.map((data) => {
           return (
             <TodoRender
@@ -62,7 +64,7 @@ const TodosCSR = () => {
           );
         })}
       </section>
-      <h2 className="text-2xl p-2">완료한 일</h2>
+      <h2 className="text-2xl mt-8 p-4">완료한 일</h2>
       <section className="position: relative flex gap-4">
         {doneTodo.map((data) => {
           return (

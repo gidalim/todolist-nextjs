@@ -24,15 +24,9 @@
       "isDone": true
     },
     {
-      "id": "87d2",
-      "title": "d",
-      "contents": "d",
-      "isDone": false
-    },
-    {
-      "id": "aed5",
-      "title": "f",
-      "contents": "f",
+      "id": "a89b",
+      "title": "tailwind 적용하기",
+      "contents": "csr페이지부터 시작하기",
       "isDone": false
     }
   ]

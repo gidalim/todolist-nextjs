@@ -16,12 +16,12 @@ const TodosSSR = async () => {
   const doneTodo = todos.filter((todos) => todos.isDone);
 
   return (
-    <div className="md:container md:mx-auto">
-      <Link href={"/report"} className="text-xl m-8">
+    <div className="md:container md:mx-auto flex flex-col gap-8">
+      <Link href={"/report"} className="text-xl font-bold mt-8 text-center">
         할 일 통계 보러가기
       </Link>
-      <h2 className="text-2xl m-8 p-2">해야 할 일</h2>
-      <section className="position: relative flex gap-4">
+      <h2 className="text-2xl mt-8 p-2">해야 할 일</h2>
+      <section className="position: relative flex flex-wrap gap-4">
         {mustTodo.map((data) => {
           return (
             <div
@@ -39,8 +39,8 @@ const TodosSSR = async () => {
           );
         })}
       </section>
-      <h2 className="text-2xl m-8 p-2">완료한 일</h2>
-      <section className="position: relative flex gap-4">
+      <h2 className="text-2xl mt-8 p-2">완료한 일</h2>
+      <section className="position: relative flex flex-wrap gap-4">
         {doneTodo.map((data) => {
           return (
             <div

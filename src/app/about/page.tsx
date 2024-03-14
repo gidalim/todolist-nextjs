@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-// export const dynamic = "force-static";
 
 const about = async () => {
   const response = await fetch(`http://localhost:4000/companyInfo`);
