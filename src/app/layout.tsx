@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-slate-50`}>
         <QueryProvider>
           <nav className="bg-gray-800 p-3 flex justify-start">
             <Link className="text-gray-300 p-3" href={"/"}>

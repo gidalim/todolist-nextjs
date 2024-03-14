@@ -50,7 +50,7 @@ const TodosCSR = () => {
       <button onClick={handleButtonClick}>할 일 통계 보러가기</button>
       <TodoForm />
       <h2 className="text-2xl p-2">해야 할 일</h2>
-      <section className="p-6 max-w-sm bg-white rounded-xl shadow-lg flex space-x-4">
+      <section className="position: relative flex gap-4">
         {mustTodo.map((data) => {
           return (
             <TodoRender
@@ -63,7 +63,7 @@ const TodosCSR = () => {
         })}
       </section>
       <h2 className="text-2xl p-2">완료한 일</h2>
-      <section className="p-6 max-w-sm bg-white rounded-xl shadow-lg flex space-x-4">
+      <section className="position: relative flex gap-4">
         {doneTodo.map((data) => {
           return (
             <TodoRender
