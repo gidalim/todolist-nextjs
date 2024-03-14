@@ -17,27 +17,43 @@ const TodosSSR = async () => {
 
   return (
     <>
-      <Link href={"/report"}>할 일 통계 보러가기</Link>
-      <section>
-        <h2>해야 할 일</h2>
+      <Link href={"/report"} className="text-xl m-8">
+        할 일 통계 보러가기
+      </Link>
+      <h2 className="text-2xl m-8 p-2">해야 할 일</h2>
+      <section className="p-6 max-w-sm bg-white rounded-xl shadow-lg flex space-x-4">
         {mustTodo.map((data) => {
           return (
-            <div key={data.id}>
-              <h3>{data.title}</h3>
-              <p>{data.contents}</p>
-              {data.isDone ? "Not Done" : "Done"}
+            <div key={data.id} className="p-6">
+              <h3 className="p-2 text-xl font-medium text-black">
+                {data.title}
+              </h3>
+              <p className="p-2 text-slate-500">{data.contents}</p>
+              <span
+                className={`${
+                  data.isDone ? `bg-blue-600` : `bg-red-500`
+                } rounded-md p-2`}
+              >
+                {data.isDone ? "Not Done" : "Done"}
+              </span>
             </div>
           );
         })}
       </section>
-      <section>
-        <h2>완료한 일</h2>
+      <h2 className="text-2xl m-8 p-2">완료한 일</h2>
+      <section className="flex flex-wrap p-6">
         {doneTodo.map((data) => {
           return (
-            <div key={data.id}>
-              <h3>{data.title}</h3>
-              <p>{data.contents}</p>
-              {data.isDone ? "Not Done" : "Done"}
+            <div key={data.id} className="p-8">
+              <h3 className="p-2">{data.title}</h3>
+              <p className="p-2">{data.contents}</p>
+              <span
+                className={`${
+                  data.isDone ? `bg-blue-600` : `bg-red-500`
+                } rounded-md p-2`}
+              >
+                {data.isDone ? "Not Done" : "Done"}
+              </span>
             </div>
           );
         })}

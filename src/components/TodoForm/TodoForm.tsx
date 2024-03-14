@@ -48,7 +48,9 @@ const TodoForm = () => {
           onChange={handleChangeContent}
           required
         />
-        <button>생성 버튼</button>
+        <button className="px-4 py-2 bg-sky-600 rounded text-white hover:bg-sky-700">
+          생성 버튼
+        </button>
       </form>
     </div>
   );

@@ -21,6 +21,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <QueryProvider>
           <nav className="bg-gray-800 p-3 flex justify-start">
+            <Link className="text-gray-300 p-3" href={"/"}>
+              home
+            </Link>
             <Link className="text-gray-300 p-3" href={"/about"}>
               about
             </Link>
