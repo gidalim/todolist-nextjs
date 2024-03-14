@@ -29,7 +29,7 @@ export const TodoRender: React.FC<TodoItems> = ({
       </div>
       <div className="flex flex-col gap-2">
         <h3 className="p-2 text-xl font-medium text-black">{data.title}</h3>
-        <p className="p-2">{data.contents}</p>
+        <p className="p-2 text-slate-500">{data.contents}</p>
       </div>
       <div className="flex justify-end m-4">
         <button

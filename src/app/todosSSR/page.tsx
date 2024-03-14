@@ -26,15 +26,17 @@ const TodosSSR = async () => {
           return (
             <div
               key={data.id}
-              className="p-6 max-w-sm bg-white rounded-xl shadow-lg flex-col space-x-4 size-60"
+              className="flex flex-col gap-2 p-6 max-w-sm bg-white rounded-xl shadow-lg flex-col space-x-4 min-w-80 min-h-64 size-1/4"
             >
               <h3 className="p-2 text-xl font-medium text-black">
                 {data.title}
               </h3>
               <p className="p-2 text-slate-500">{data.contents}</p>
-              <span className="cursor-default bg-blue-600 hover:bg-blue-700 text-white rounded-md p-2">
-                {data.isDone ? "Not Done" : "Done"}
-              </span>
+              <div className="flex justify-end m-4">
+                <span className="cursor-default bg-blue-600 hover:bg-blue-700 text-white rounded-md p-2">
+                  {data.isDone ? "Not Done" : "Done"}
+                </span>
+              </div>
             </div>
           );
         })}
@@ -45,15 +47,17 @@ const TodosSSR = async () => {
           return (
             <div
               key={data.id}
-              className="p-6 max-w-sm bg-white rounded-xl shadow-lg flex-col space-x-4 size-60"
+              className="flex flex-col gap-2 p-6 max-w-sm bg-white rounded-xl shadow-lg flex-col space-x-4 min-w-80 min-h-64 size-1/4"
             >
               <h3 className="p-2 text-xl font-medium text-black">
                 {data.title}
               </h3>
               <p className="p-2 text-slate-500">{data.contents}</p>
-              <span className="cursor-default bg-red-500 hover:bg-red-600 text-white rounded-md p-2">
-                {data.isDone ? "Not Done" : "Done"}
-              </span>
+              <div className="flex justify-end m-4">
+                <span className="cursor-default bg-red-500 hover:bg-red-600 text-white rounded-md p-2">
+                  {data.isDone ? "Not Done" : "Done"}
+                </span>
+              </div>
             </div>
           );
         })}

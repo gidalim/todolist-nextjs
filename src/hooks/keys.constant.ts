@@ -1,3 +1,3 @@
-export const QUERY_KEYS: { TODOLIST: string } = {
+export const QUERY_KEYS = {
   TODOLIST: "todos",
-};
+} as const;
