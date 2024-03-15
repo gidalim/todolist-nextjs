@@ -28,6 +28,12 @@
       "title": "tailwind 적용하기",
       "contents": "csr페이지부터 시작하기",
       "isDone": false
+    },
+    {
+      "id": "b6c2",
+      "title": "그런게 어딨어",
+      "contents": "살다 보면 살아지는거지",
+      "isDone": true
     }
   ]
 }

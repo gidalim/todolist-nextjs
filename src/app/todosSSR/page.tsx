@@ -4,7 +4,7 @@ import React from "react";
 export const dynamic = "force-dynamic";
 
 const TodosSSR = async () => {
-  const response = await fetch(`http://localhost:4000/todos`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/todos`, {
     cache: "no-cache",
   });
   const todos: Todo[] = await response.json();

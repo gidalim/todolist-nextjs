@@ -1,7 +1,9 @@
 import React from "react";
 
 const about = async () => {
-  const response = await fetch(`http://localhost:4000/companyInfo`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/companyInfo`
+  );
   const company = await response.json();
 
   return (

@@ -1,5 +1,5 @@
 export async function GET(request: Request) {
-  const response = await fetch("http://localhost:4000/todos");
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/todos`);
   const todos = await response.json();
 
   if (!todos) {
@@ -15,7 +15,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const { title, contents } = await request.json();
 
-  const response = await fetch(`http://localhost:4000/todos`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/todos`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

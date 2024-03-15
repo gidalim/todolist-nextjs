@@ -2,7 +2,7 @@ import { Todo } from "@/types/type";
 import React from "react";
 
 const report = async () => {
-  const response = await fetch(`http://localhost:4000/todos`, {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/todos`, {
     next: {
       revalidate: 10,
     },
