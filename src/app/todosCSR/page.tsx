@@ -65,7 +65,7 @@ const TodosCSR = () => {
         })}
       </section>
       <h2 className="text-2xl mt-8 p-4">완료한 일</h2>
-      <section className="position: relative flex gap-4">
+      <section className="position: relative flex flex-wrap gap-4">
         {doneTodo.map((data) => {
           return (
             <TodoRender

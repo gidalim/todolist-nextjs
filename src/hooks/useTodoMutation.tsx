@@ -10,7 +10,7 @@ export const useCreateTodo = () => {
   const { mutate } = useMutation({
     mutationFn: async (newTodo: NewTodo) => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST_URL}api/todos`,
+        `${process.env.NEXT_PUBLIC_HOST_URL}/api/todos`,
         {
           method: "POST",
           headers: {
@@ -35,7 +35,7 @@ export const useDeleteTodo = () => {
   const queryClient = useQueryClient();
   const { mutate } = useMutation({
     mutationFn: async (id: string) => {
-      await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}api/todos/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/todos/${id}`, {
         method: "DELETE",
       });
     },
@@ -53,7 +53,7 @@ export const useUpdateTodo = () => {
   const { mutate } = useMutation({
     mutationFn: async (updateTodo: UpdateTodo) => {
       const { id, isDone } = updateTodo;
-      await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}api/todos/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/todos/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

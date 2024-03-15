@@ -9,7 +9,7 @@ export const useTodoQuery = () => {
     queryKey: [QUERY_KEYS.TODOLIST],
     queryFn: async () => {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST_URL}api/todos`
+        `${process.env.NEXT_PUBLIC_HOST_URL}/api/todos`
       );
       const { todos }: { todos: Todo[] } = await response.json();
 
