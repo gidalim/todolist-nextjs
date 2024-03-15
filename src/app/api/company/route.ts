@@ -7,6 +7,8 @@ export async function GET(request: Request) {
   );
   const company = await response.json();
 
+  console.log(company);
+
   if (!company) {
     return new Response("정보가 존재하지 않습니다", {
       status: 404,
